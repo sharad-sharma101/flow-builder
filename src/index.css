@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 248 250 252;
+    --foreground: 15 23 42;
+
+    --card: 0 0% 100%;
+    --card-foreground: 15 23 42;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 15 23 42;
+
+    --primary: 167 85% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 148 38% 15%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 241 13% 96%;
+    --muted-foreground: 100 7% 23%;
+
+    --accent: 167 85% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 226 33% 91%;
+    --input: 226 33% 91%;
+    --ring: 167 85% 45%;
+
+    --radius: 0.75rem;
+
+    /* Flow Builder Specific Colors */
+    --flow-canvas: 248 250 252;
+    --flow-panel: 0 0% 100%;
+    --flow-node: 0 0% 100%;
+    --flow-node-header: 167 85% 45%;
+    --flow-node-shadow: 226 33% 91% / 0.2;
+    --flow-edge: 167 85% 45%;
+    --flow-handle: 167 85% 45%;
+    --flow-handle-active: 148 38% 15%;
+
+    /* Gradients */
+    --gradient-flow: linear-gradient(135deg, hsl(167 85% 45%) 0%, hsl(148 38% 15%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(248 250 252) 100%);
+
+    /* Shadows */
+    --shadow-panel: 0 10px 30px -5px hsl(226 33% 91% / 0.3);
+    --shadow-node: 0 4px 12px -2px hsl(226 33% 91% / 0.25);
+    --shadow-button: 0 2px 4px -1px hsl(167 85% 45% / 0.2);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 15 23 42;
+    --foreground: 241 13% 96%;
+
+    --card: 30 41% 9%;
+    --card-foreground: 241 13% 96%;
+
+    --popover: 30 41% 9%;
+    --popover-foreground: 241 13% 96%;
+
+    --primary: 167 85% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 148 38% 15%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 64 12% 15%;
+    --muted-foreground: 64 5% 52%;
+
+    --accent: 167 85% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 64 12% 15%;
+    --input: 64 12% 15%;
+    --ring: 167 85% 45%;
+
+    /* Dark mode flow colors */
+    --flow-canvas: 15 23 42;
+    --flow-panel: 30 41% 9%;
+    --flow-node: 30 41% 9%;
+    --flow-node-header: 167 85% 45%;
+    --flow-node-shadow: 0 0% 0% / 0.3;
+    --flow-edge: 167 85% 45%;
+    --flow-handle: 167 85% 45%;
+    --flow-handle-active: 148 38% 15%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* React Flow Custom Styles */
+.react-flow .react-flow__renderer {
+  background: hsl(var(--flow-canvas));
+}
+
+.react-flow .react-flow__node {
+  font-family: inherit;
+}
+
+.react-flow .react-flow__edge-path {
+  stroke: hsl(var(--flow-edge));
+}
+
+.react-flow .react-flow__edge.selected .react-flow__edge-path {
+  stroke: hsl(var(--primary));
+}
+
+.react-flow .react-flow__handle {
+  background: hsl(var(--flow-handle));
+  border: 2px solid hsl(var(--card));
+  width: 12px;
+  height: 12px;
+}
+
+.react-flow .react-flow__handle:hover {
+  background: hsl(var(--flow-handle-active));
+}
+
+.react-flow .react-flow__handle.connecting {
+  background: hsl(var(--primary));
+}
+
+.react-flow .react-flow__handle.valid {
+  background: hsl(var(--primary));
+}
+
+.react-flow .react-flow__controls {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow-panel);
+}
+
+.react-flow .react-flow__controls-button {
+  background: transparent;
+  border: none;
+  color: hsl(var(--muted-foreground));
+  transition: all 0.2s ease;
+}
+
+.react-flow .react-flow__controls-button:hover {
+  background: hsl(var(--muted));
+  color: hsl(var(--foreground));
+}
+
+.react-flow .react-flow__minimap {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow-panel);
+}
+
+.react-flow .react-flow__attribution {
+  background: hsl(var(--card));
+  color: hsl(var(--muted-foreground));
+  font-size: 10px;
+}
