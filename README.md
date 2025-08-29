@@ -1,4 +1,4 @@
-# FlowWeaver - Chatbot Flow Builder
+# FlowBuilder - Chatbot Flow Builder
 
 A Chats flow builder for designing chatbot conversation flows built with React, TypeScript, and Tailwind CSS.
 
@@ -15,7 +15,7 @@ A Chats flow builder for designing chatbot conversation flows built with React, 
 - **Frontend**: React 18 + TypeScript
 - **Build Tool**: Vite
 - **Styling**: Tailwind CSS + shadcn/ui
-- **Flow Engine**: @xyflow/react
+- **Flow Engine**: @xyflow/react (rebranded name for what was previously known as reactflow)
 - **Icons**: Lucide React
 - **State Management**: React Hooks
 - **Routing**: React Router DOM
